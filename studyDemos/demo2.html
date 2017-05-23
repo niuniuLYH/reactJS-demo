@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/javascript" src="build/react.js"></script>
+<script type="text/javascript" src="build/react-dom.js"></script>
+<script type="text/javascript" src="build/browser.min.js"></script>
+<script type="text/babel">
+    var names = ['alice','elamie','kate'];
+    ReactDOM.render(
+        <div>
+            {
+              names.map(function(value,index){
+                return <div key = {index} >hello ,{value}!</div>
+              })
+            }
+        </div>,
+        document.getElementById('example')
+    )
+
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/javascript" src="build/react.js"></script>
+<script type="text/javascript" src="build/react-dom.js"></script>
+<script type="text/javascript" src="build/browser.min.js"></script>
+<script type="text/babel">
+/**
+    **组件并不是真正的dom节点，而是存在在内存中的一种数据结构，叫虚拟DOM，当被插入文档之后，才能变成真实的dom。
+    **根据react的设计，所有的dom的变动都要现在虚拟dom上发生，然后再将实际发生变动的部分表现在真实dom上。
+    **如果要从组件获取真实dom，就要使用ref属性。给dom上设置ref属性，再用this.ref.[name]就可以拿到真实的dom节点
+    **注意，this.ref.[name]获取的是真实dom，所以必须等到虚拟dom插入文档之后才能使用这个属性，否则会报错
+***/
+    var MyTitle = React.createClass({
+        handleClick : function(){
+            this.refs.myTextInput.focus();
+        },
+        render:function(){
+            return (
+                <div>
+                    <input type = 'text' ref = 'myTextInput' />
+                    <input type = 'button' value = 'focus the input' onClick = {this.handleClick} />
+                </div>
+            );
+        }
+    });
+
+    ReactDOM.render(
+        <MyTitle />,
+        document.getElementById('example')
+    )
+</script>
+</body>
+</html>
