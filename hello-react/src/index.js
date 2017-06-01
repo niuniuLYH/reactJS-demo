@@ -8,6 +8,10 @@ import Props from './props.js';//react的props属性的使用
 import Computer from './computerAndScreen.js';//电脑和显示器的demo
 import RenderList from './renderList.js';//react渲染列表
 import PrintTitle from './printTitle.js';//打印章节标题的demo
+import PercentageApp from './percentDemo.js';//百分比转换器demo
+import LifeCycle from './lifeCycle.js';//一个时钟的demo
+import ReactChildren from './reactChild.js';//react的children属性
+import ReactStyle from './reactStyle.js';//react的style属性
 
 //打印章节标题的demo所需的lessons
 const lessons = [
@@ -23,4 +27,4 @@ const lessons = [
 //ReactDOM.render(<App />, document.getElementById('root'));
 //registerServiceWorker();
 
-ReactDOM.render(<PrintTitle lessons={lessons} />,document.getElementById('root'));
+ReactDOM.render(<ReactStyle style={{color: 'blue',fontSize: '58px'}} />,document.getElementById('root'));

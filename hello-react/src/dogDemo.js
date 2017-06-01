@@ -36,16 +36,11 @@ class Dog extends Component {
         },2000);
     }
 
-    handleClickOnDog () {
-        this.bark();
-        this.run();
-    }
-
     render () {
         const {isRunning,isBarking} = this.state;
         return (
             <div>
-                <div onClick= {this.handleClickOnDog.bind(this)}>DOG</div>
+                <div onClick= {this.run.bind(this)}>DOG</div>
                 <div>{ isRunning ? 'the dog is running' : 'the dog stoped' }</div>
                 <div>{ isBarking ? 'the dog is barking' : 'the dog stoped barking' }</div>
             </div>

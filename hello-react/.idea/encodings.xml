@@ -4,9 +4,15 @@
     <file url="file://$PROJECT_DIR$/src/componentBuild.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/computerAndScreen.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/dogDemo.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/getHeightDemo.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/index.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/lifeCycle.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/percentDemo.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/postDemo.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/printTitle.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/props.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/reactChild.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/reactStyle.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/renderList.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/state.js" charset="UTF-8" />
   </component>
