@@ -1,58 +1,80 @@
 import React, { Component, PropTypes } from 'react'
 import ReactDOM from 'react-dom'
-import Header from './Header'
-import Content from './Content'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import UsersList from './Users';
+// import Header from './Header'
+// import Content from './Content'
 import './index.css'
 
-function createStore(reducer) {
-    let state = null;
-    const listeners = [];
-    const subscribe = (lister) => listeners.push(lister);
-    const getState = () => state;
-    const dispatch = (action) => {
-        state = reducer(state, action);
-        listeners.forEach((lister) => lister());
-    };
-    dispatch({});
-    return {getState, dispatch, subscribe}
-}
+// const themeReducer = (state, action) => {
+//     if(!state) {
+//         return {
+//             themeColor: 'red'
+//         }
+//     }
+//     switch (action.type) {
+//         case 'CHANGE_COLOR':
+//             return {...state, themeColor: action.themeColor};
+//         default:
+//             return state;
+//     }
+// };
+//
+// const store = createStore(themeReducer);
+//
+// class Index extends Component {
+//
+//     render () {
+//         return (
+//             <div>
+//                 <Header />
+//                 <Content />
+//             </div>
+//         )
+//     }
+// }
+//
+// ReactDOM.render(
+//     <Provider store={ store }>
+//         <Index />
+//     </Provider>,
+//     document.getElementById('root')
+// );
 
-const themeReducer = (state, action) => {
+
+/**users相关功能***************************************/
+const usersReducer = (state, action) => {
     if(!state) {
-        return {
-            themeColor: 'red'
-        }
+        return [{
+            username: 'hahaha',
+            age: 23,
+            gender: 'male'
+        }];
     }
     switch (action.type) {
-        case 'CHANGE_COLOR':
-            return {...state, themeColor: action.themeColor};
+        case 'ADD_USER':
+            return [...state, action.user];
+        case 'DELETE_USER':
+            return [...state.slice(0, action.index), ...state.slice(action.index + 1)];
+        case 'UPDATE_USER':
+            return [...state.map((value,key) => {
+                if(key === action.index){
+                    return {...value, ...action.user}
+                }else {
+                    return value;
+                }
+            })];
         default:
             return state;
     }
 };
 
-const store = createStore(themeReducer);
-
-class Index extends Component {
-    static childContextTypes = {
-        store: PropTypes.object
-    };
-
-    getChildContext () {
-        return { store }
-    }
-
-    render () {
-        return (
-            <div>
-                <Header />
-                <Content />
-            </div>
-        )
-    }
-}
+const store = createStore(usersReducer);
 
 ReactDOM.render(
-    <Index />,
+    <Provider store={ store }>
+        <UsersList />
+    </Provider>,
     document.getElementById('root')
 );
