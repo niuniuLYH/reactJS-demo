@@ -49,8 +49,6 @@ class Comment extends Component {
         }
     }
 
-
-
     render () {
         let { comment } = this.props;
         return (

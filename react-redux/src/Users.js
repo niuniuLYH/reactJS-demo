@@ -58,7 +58,6 @@ class UsersList extends Component {
     }
 
     handleAddUser (user) {
-
         if(this.props.addUser) {
             this.props.addUser(user);
         }

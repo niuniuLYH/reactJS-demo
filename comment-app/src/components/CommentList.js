@@ -1,7 +1,13 @@
 import React,{Component} from 'react';
+import PropTypes from 'prop-types';
+
 import Comment from './Comment.js';
 
 class CommentList extends Component {
+    static propTypes = {
+        comments: PropTypes.array
+    };
+
     static defaultProps = {
         comments: []
     };
@@ -14,6 +20,7 @@ class CommentList extends Component {
 
     render () {
         let { comments } = this.props;
+        console.log(comments);
         return (
             <div>
                 {

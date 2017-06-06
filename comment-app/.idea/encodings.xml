@@ -2,9 +2,9 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/App.css" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/Comment.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/CommentApp.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/CommentInput.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/CommentList.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/components/Comment.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/components/CommentInput.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/components/CommentList.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/containers/CommentApp.js" charset="UTF-8" />
   </component>
 </project>

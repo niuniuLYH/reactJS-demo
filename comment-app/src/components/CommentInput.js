@@ -3,34 +3,25 @@ import PropTypes from 'prop-types';
 
 class CommentInput extends Component {
     static propTypes = {
-        onSubmit: PropTypes.func
+        username: PropTypes.any,
+        onSubmit: PropTypes.func,
+        onUserNameInputBlur: PropTypes.func
     };
 
-    constructor () {
-        super();
+    static defaultProps = {
+        username: ''
+    };
+
+    constructor (props) {
+        super(props);
         this.state = {
-            username:'',
+            username: props.username,// 从 props 上取 username 字段
             content:''
         }
     }
 
-    componentWillMount () {
-        this._loadUsername();
-    }
-
     componentDidMount () {
         this.textarea.focus();
-    }
-
-    _saveUsername (username) {
-        localStorage.setItem('username', username);
-    }
-
-    _loadUsername () {
-        const username = localStorage.getItem('username');
-        if(username) {
-            this.setState({username});
-        }
     }
 
     handleSubmit () {
@@ -45,8 +36,11 @@ class CommentInput extends Component {
         })
     }
 
-    handleUsernameBlur (event) {
-        this._saveUsername(event.target.value);
+    handleUsernameBlur (e) {
+        if(this.props.onUserNameInputBlur) {
+            this.props.onUserNameInputBlur(e.target.value);
+        }
+        // this._saveUsername(event.target.value);
     }
 
     handleUsernameChange (e) {
